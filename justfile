@@ -45,3 +45,6 @@ log := server_folder+'/utils/logger'
     {{log}} info 'Adding mods from folder {{FOLDER}}'
     cp {{FOLDER}} {{server_folder}}/{{NAME}}/mods -r
     {{log}} success 'Done'
+
+start NAME:
+    cd {{NAME}} && just start
