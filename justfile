@@ -41,13 +41,6 @@ log := server_folder+'/utils/logger'
       just _create_paper {{NAME}}; \
     fi
 
-@test:
-    if [[ -d test ]]; then \
-    echo 'There!'; \
-    else \
-    echo 'Not there!'; \
-    fi
-
 @mods NAME FOLDER:
     {{log}} info 'Adding mods from folder {{FOLDER}}'
     cp {{FOLDER}} {{server_folder}}/{{NAME}}/mods -r
