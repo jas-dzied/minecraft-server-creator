@@ -16,7 +16,7 @@ log := server_folder+'/utils/logger'
     {{server_folder}}/utils/logger 'success' 'Done'
 @fabric NAME:
     if [[ -d test ]]; then \
-      {{log}} error Folder "{{NAME}}" already found!'; \
+      {{log}} error 'Folder "{{NAME}}" already found!'; \
     else \
       just _create_fabric {{NAME}}; \
     fi
@@ -36,7 +36,7 @@ log := server_folder+'/utils/logger'
     {{server_folder}}/utils/logger 'success' 'Done'
 @paper NAME:
     if [[ -d test ]]; then \
-      {{log}} error Folder "{{NAME}}" already found!'; \
+      {{log}} error 'Folder "{{NAME}}" already found!'; \
     else \
       just _create_paper {{NAME}}; \
     fi
