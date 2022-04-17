@@ -34,6 +34,12 @@ log := server_folder+'/utils/logger'
     {{server_folder}}/utils/logger 'info' 'Generating justfile'
     cp {{server_folder}}/utils/paper_template_justfile {{server_folder}}/{{NAME}}/justfile
     {{server_folder}}/utils/logger 'success' 'Done'
+@paper NAME:
+    if [[ -d test ]]; then \
+      {{log}} error Folder "{{NAME}}" already found!'; \
+    else \
+      just _create_paper {{NAME}}; \
+    fi
 
 @test:
     if [[ -d test ]]; then \
