@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+content = json.loads(requests.get('https://papermc.io/api/v2/projects/paper/version_group/1.18/builds').text)
+builds = content["builds"]
+newest_build = builds[-1]['build']
+build_url = f"https://papermc.io/api/v2/projects/paper/versions/1.18.2/builds/{newest_build}/downloads/paper-1.18.2-{newest_build}.jar"
+print(build_url)

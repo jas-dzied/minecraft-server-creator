@@ -1,0 +1,5 @@
+default_min_ram := '2G'
+default_max_ram := '4G'
+
+start MIN=default_min_ram MAX=default_max_ram:
+      java -Xms{{MIN}} -Xmx{{MAX}} -jar fabric-server.jar nogui

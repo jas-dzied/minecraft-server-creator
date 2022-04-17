@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+
+import sys
+from datetime import datetime
+from rich.console import Console
+from rich.text import Text
+
+mode = sys.argv[1].lower()
+text = sys.argv[2]
+
+now = datetime.now()
+time = Text(f"[{now.strftime('%H:%M:%S')}]")
+time.stylize("italic #808080")
+
+header = Text(mode.upper())
+
+if mode == 'info':
+    header.stylize("bold #ECBC00")
+elif mode == 'success':
+    header.stylize("bold green")
+elif mode == 'error':
+    header.stylize("bold red")
+else:
+    assert False, f"Mode not found: {mode}"
+
+Console().print(time, header, text)
